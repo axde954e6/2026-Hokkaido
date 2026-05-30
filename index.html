@@ -125,6 +125,54 @@
 
     .notice strong { color: var(--codex); }
 
+    .stay-section {
+      margin: 0 0 20px;
+      padding: 16px 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stay-section h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: var(--road);
+    }
+
+    .stay-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stay-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 12px;
+    }
+
+    .stay-title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .stay-title strong {
+      min-width: 0;
+      font-size: 1rem;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--mist);
+      color: var(--road);
+      padding: 3px 8px;
+      font-size: .76rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .day {
       padding: 22px 0;
       border-top: 1px solid var(--line);
@@ -258,6 +306,7 @@
 
     @media (min-width: 760px) {
       .summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .stay-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .item.wide { grid-column: 1 / -1; }
       .hero { min-height: 72vh; }
@@ -289,11 +338,28 @@
       <a href="#d724">7/24 五 札幌</a>
       <a href="#d725">7/25 六 札幌</a>
       <a href="#d726">7/26 日 札幌</a>
+      <a href="#stays">住宿地點</a>
       <a href="food.html">美食清單</a>
       <a href="#backup-asahikawa">備案 旭川</a>
       <a href="#backup-otaru">備案 小樽</a>
       <a href="#backup-sapporo">備案 札幌</a>
     </nav>
+
+    <section class="stay-section" id="stays">
+      <h2>住宿地點</h2>
+      <div class="stay-grid">
+        <article class="stay-card">
+          <div class="stay-title"><strong>旭川住宿｜OMO7 旭川 by 星野リゾート</strong><span class="badge">7/18-7/20</span></div>
+          <p class="note">自駕前段的住宿基準點。7/18 抵達後入住，7/21 從旭川出發前往札幌。</p>
+          <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=OMO7+Asahikawa+79+374+094*43" target="_blank" rel="noreferrer">MapCode 79 374 094*43</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=OMO7+Asahikawa" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="stay-card">
+          <div class="stay-title"><strong>札幌住宿｜札幌京王廣場飯店</strong><span class="badge">7/21 起</span></div>
+          <p class="note">札幌站附近的住宿基準點。7/22 小樽來回、7/24 還車後都以這裡為中心移動。</p>
+          <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo+9+521+627*82" target="_blank" rel="noreferrer">MapCode 9 521 627*82</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+      </div>
+    </section>
 
     <p class="notice"><strong>codex 標記</strong>：代表我依照你的住宿、移動方向與空白格補上的建議。營業時間和休園日仍建議出發前再點來源確認一次。</p>
 
