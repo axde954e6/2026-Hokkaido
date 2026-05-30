@@ -131,6 +131,7 @@
 
     .topline {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       align-items: flex-start;
       justify-content: space-between;
@@ -150,6 +151,23 @@
       font-weight: 900;
       font-size: .88rem;
       text-align: right;
+    }
+
+    .score {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 5px 9px;
+      border-radius: 8px;
+      background: #fff1b8;
+      border: 1px solid #e6c45d;
+      color: #6f4f00;
+      font-weight: 950;
+      font-size: .82rem;
+      white-space: nowrap;
+      box-shadow: 0 1px 0 rgba(111, 79, 0, .12);
     }
 
     .tags {
@@ -243,14 +261,14 @@
       <h3 class="category">拉麵</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">旭川らぅめん青葉 本店</span><span class="hours">約 9:30-17:30</span></div>
+          <div class="topline"><span class="name">旭川らぅめん青葉 本店</span><span class="score">Tabelog 3.6台</span><span class="hours">約 9:30-17:30</span></div>
           <div class="tags"><span class="tag">旭川</span><span class="tag food">拉麵</span><span class="tag hit">Tabelog 拉麵 HOKKAIDO 百名店 2025</span></div>
           <p class="note">1947 年創業的旭川拉麵老店，推薦正油拉麵；早上就能吃，適合退房前或移動日前補一碗。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0104/A010401/1000314/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://namara-asahikawa.jp/gourmet/ramen/aoba-honten/" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B7%9D%E3%82%89%E3%81%85%E3%82%81%E3%82%93%E9%9D%92%E8%91%89+%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">蜂屋 五条創業店</span><span class="hours">約 10:30-20:00</span></div>
+          <div class="topline"><span class="name">蜂屋 五条創業店</span><span class="score">Tabelog 3.61</span><span class="hours">約 10:30-20:00</span></div>
           <div class="tags"><span class="tag">旭川</span><span class="tag food">拉麵</span><span class="tag hit">Tabelog 拉麵 HOKKAIDO 百名店 2025</span></div>
           <p class="note">焦香豬油與魚介系湯頭是特色，味道有個性；想吃旭川代表性老舖拉麵可選這家。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0104/A010401/1000269/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://h389300.gorp.jp/" target="_blank" rel="noreferrer">店鋪頁</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E8%9C%82%E5%B1%8B+%E4%BA%94%E6%9D%A1%E5%89%B5%E6%A5%AD%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -260,14 +278,14 @@
       <h3 class="category">成吉思汗 / 居酒屋</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">成吉思汗 大黒屋 五丁目店</span><span class="hours">約 16:00-23:30</span></div>
+          <div class="topline"><span class="name">成吉思汗 大黒屋 五丁目店</span><span class="score">Tabelog 3.7台</span><span class="hours">約 16:00-23:30</span></div>
           <div class="tags"><span class="tag">旭川</span><span class="tag food">成吉思汗</span><span class="tag hit">Tabelog 高評價</span></div>
           <p class="note">旭川人氣羊肉店，推薦厚切羊肉與生ラム；晚餐尖峰建議預約或早點到。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/tw/hokkaido/A0104/A010401/1027848/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97+%E5%A4%A7%E9%BB%92%E5%B1%8B+%E4%BA%94%E4%B8%81%E7%9B%AE%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">独酌 三四郎</span><span class="hours">約 17:00-23:00</span></div>
+          <div class="topline"><span class="name">独酌 三四郎</span><span class="score">Tabelog 3.55</span><span class="hours">約 17:00-23:00</span></div>
           <div class="tags"><span class="tag">旭川</span><span class="tag food">居酒屋 / 鄉土料理</span><span class="tag hit">Tabelog 居酒屋 EAST 百名店 2025</span></div>
           <p class="note">適合想吃北海道在地料理、海鮮與地酒的晚上；比單純拉麵更適合慢慢吃。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0104/A010401/1014057/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%8B%AC%E9%85%8C+%E4%B8%89%E5%9B%9B%E9%83%8E+%E6%97%AD%E5%B7%9D" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -282,21 +300,21 @@
       <h3 class="category">壽司 / 海鮮</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">宝すし</span><span class="hours">約午餐-晚餐，售完早收</span></div>
+          <div class="topline"><span class="name">宝すし</span><span class="score">Tabelog 3.6台</span><span class="hours">約午餐-晚餐，售完早收</span></div>
           <div class="tags"><span class="tag">小樽</span><span class="tag food">壽司</span><span class="tag hit">Tabelog 壽司 EAST 百名店 2021/2022</span></div>
           <p class="note">小樽壽司名店，推薦點店主套餐或握壽司；Tabelog 提醒ネタ與シャリ可能售完早收。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0106/A010601/1000103/dtlmap/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E3%81%99%E3%81%97+%E5%B0%8F%E6%A8%BD" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">寿司処 旬</span><span class="hours">約 11:00-21:00</span></div>
+          <div class="topline"><span class="name">寿司処 旬</span><span class="score">Tabelog 3.5台</span><span class="hours">約 11:00-21:00</span></div>
           <div class="tags"><span class="tag">小樽</span><span class="tag food">壽司 / 海鮮</span><span class="tag hit">Tabelog 高評價</span></div>
           <p class="note">小樽站與運河都近，主打北海道產與當季食材；比高級 omakase 更好插入散步行程。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0106/A010601/1002424/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%BF%E5%8F%B8%E5%87%A6+%E6%97%AC+%E5%B0%8F%E6%A8%BD" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">おたる 魚亭</span><span class="hours">約午餐-晚餐</span></div>
+          <div class="topline"><span class="name">おたる 魚亭</span><span class="score">Tabelog 3.5台</span><span class="hours">約午餐-晚餐</span></div>
           <div class="tags"><span class="tag">小樽</span><span class="tag food">壽司 / 蟹 / 海鮮</span><span class="tag hit">Tabelog 高評價</span></div>
           <p class="note">想吃海鮮、蟹與壽司都可考慮；花園區，適合搭配堺町通或夜晚回程前。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0106/A010601/1003098/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%81%9F%E3%82%8B+%E9%AD%9A%E4%BA%AD" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -306,14 +324,14 @@
       <h3 class="category">炸雞 / 甜點 / 蕎麥</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">若鶏時代 なると 本店</span><span class="hours">約 11:00-21:00</span></div>
+          <div class="topline"><span class="name">若鶏時代 なると 本店</span><span class="score">Tabelog 3.4台</span><span class="hours">約 11:00-21:00</span></div>
           <div class="tags"><span class="tag">小樽</span><span class="tag food">若雞半身揚</span><span class="tag hit">小樽名物</span></div>
           <p class="note">招牌是半身炸雞，外皮香、份量足；不想吃壽司時很適合當午餐。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/cn/hokkaido/A0106/A010601/1000906/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E8%8B%A5%E9%B6%8F%E6%99%82%E4%BB%A3+%E3%81%AA%E3%82%8B%E3%81%A8+%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">小樽洋菓子舗 LeTAO 本店</span><span class="hours">約 9:00-18:00</span></div>
+          <div class="topline"><span class="name">小樽洋菓子舗 LeTAO 本店</span><span class="score">Tabelog 3.5台</span><span class="hours">約 9:00-18:00</span></div>
           <div class="tags"><span class="tag">小樽</span><span class="tag food">甜點</span><span class="tag hit">小樽代表甜點</span></div>
           <p class="note">推薦雙層起司蛋糕與茶點，堺町通散步時很好安排；也適合買伴手禮。</p>
           <div class="links"><a class="btn" href="https://www.letao.jp/shop/letao.php" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=LeTAO+%E5%B0%8F%E6%A8%BD%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -328,69 +346,90 @@
       <h3 class="category">壽司</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">すし善 本店</span><span class="hours">11:30-14:30 / 17:30-21:30</span></div>
+          <div class="topline"><span class="name">すし善 本店</span><span class="score">Tabelog 3.6台</span><span class="hours">11:30-14:30 / 17:30-21:30</span></div>
           <div class="tags"><span class="tag">円山</span><span class="tag food">壽司</span><span class="tag hit">札幌高級壽司名店</span></div>
           <p class="note">適合想安排一餐高級壽司；離北海道神宮、円山公園路線可搭配。</p>
           <div class="links"><a class="btn" href="https://sushizen.co.jp/store/honten/" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%97%E5%96%84+%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">すし善 大丸札幌店</span><span class="hours">11:00-22:00</span></div>
+          <div class="topline"><span class="name">すし善 大丸札幌店</span><span class="score">Tabelog 3.4台</span><span class="hours">11:00-22:00</span></div>
           <div class="tags"><span class="tag">札幌站直結</span><span class="tag food">壽司</span><span class="tag hit">老店分店 / 交通方便</span></div>
           <p class="note">在大丸札幌 8F，逛百貨或雨天時很好排；比本店輕鬆，午餐也有較好入手的套餐。</p>
           <div class="links"><a class="btn" href="https://sushizen.co.jp/store/daimaru/" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%97%E5%96%84+%E5%A4%A7%E4%B8%B8%E6%9C%AD%E5%B9%8C%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">鮨 棗 赤レンガテラス店</span><span class="hours">約 11:30-15:00 / 17:00-22:00</span></div>
+          <div class="topline"><span class="name">鮨 棗 赤レンガテラス店</span><span class="score">Tabelog 3.5前後</span><span class="hours">約 11:30-15:00 / 17:00-22:00</span></div>
           <div class="tags"><span class="tag">札幌站 / 大通</span><span class="tag food">壽司</span><span class="tag hit">Tabelog 約 3.5 評價帶</span></div>
           <p class="note">赤レンガテラス內，札幌站到大通之間很順；適合想吃正式壽司但不想拉太遠的晚上。</p>
           <div class="links"><a class="btn" href="https://umaten.jp/hokkaido/sushi-natsume-akarenga-terrace-sapporo/" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E9%AE%A8%E6%A3%97+%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E3%83%86%E3%83%A9%E3%82%B9%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+
+        <article class="card">
+          <div class="topline"><span class="name">すし処 北斎</span><span class="score">Tabelog 3.47</span><span class="hours">夜中心，日祝休</span></div>
+          <div class="tags"><span class="tag">札幌站北口</span><span class="tag food">壽司</span><span class="tag hit">寿司 EAST 百名店 2021</span></div>
+          <p class="note">札幌站步行可達的小店，適合想在車站附近吃壽司但不想跑円山時。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010101/1000969/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%97%E5%87%A6+%E5%8C%97%E6%96%8E+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+
+        <article class="card">
+          <div class="topline"><span class="name">寿し心 なかむら</span><span class="score">Tabelog 3.48</span><span class="hours">午餐 / 晚餐</span></div>
+          <div class="tags"><span class="tag">札幌站</span><span class="tag food">壽司</span><span class="tag hit">可網路預約</span></div>
+          <p class="note">敷島ビル地下，離札幌站近；午餐較好入手，晚上也能當正式壽司餐。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010101/1002417/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%BF%E3%81%97%E5%BF%83+%E3%81%AA%E3%81%8B%E3%82%80%E3%82%89+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
       </div>
 
       <h3 class="category">拉麵</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">麺屋 彩未</span><span class="hours">11:00-15:15 / 部分日 17:00-19:30</span></div>
+          <div class="topline"><span class="name">麺屋 彩未</span><span class="score">Tabelog 3.78</span><span class="hours">11:00-15:15 / 部分日 17:00-19:30</span></div>
           <div class="tags"><span class="tag">美園</span><span class="tag food">味噌拉麵</span><span class="tag hit">Tabelog 百名店標記 / 官方營業中</span></div>
           <p class="note">札幌味噌拉麵代表名店，推薦味噌拉麵；排隊名店，最好避開正午尖峰。</p>
           <div class="links"><a class="btn" href="https://www.menya-saimi.com/" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B+%E5%BD%A9%E6%9C%AA" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">えびそば 一幻 総本店</span><span class="hours">約 11:00-翌 3:00</span></div>
+          <div class="topline"><span class="name">えびそば 一幻 総本店</span><span class="score">Tabelog 3.5台</span><span class="hours">約 11:00-翌 3:00</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">拉麵</span><span class="tag hit">札幌人氣拉麵</span></div>
           <p class="note">濃厚蝦味湯頭，可選味噌、鹽、醬油；晚餐後或夜宵也能安排。</p>
           <div class="links"><a class="btn" href="https://inowa.iderty.co.jp/store-detail.php?id=198" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%88%E3%81%B3%E3%81%9D%E3%81%B0+%E4%B8%80%E5%B9%BB+%E7%B7%8F%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">らーめん 信玄 南6条店</span><span class="hours">約 11:00-翌 1:00</span></div>
+          <div class="topline"><span class="name">らーめん 信玄 南6条店</span><span class="score">Tabelog 3.6台</span><span class="hours">約 11:00-翌 1:00</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">味噌拉麵</span><span class="tag hit">高人氣排隊店</span></div>
           <p class="note">推薦「信州」味噌與炒飯；在薄野附近，很適合宵夜或晚餐後加碼。</p>
           <div class="links"><a class="btn" href="https://domingo.ne.jp/spot/2946" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%83%BC%E3%82%81%E3%82%93+%E4%BF%A1%E7%8E%84+%E5%8D%976%E6%9D%A1%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+
+        <article class="card">
+          <div class="topline"><span class="name">さっぽろ純連 札幌店</span><span class="score">Tabelog 3.76</span><span class="hours">約 11:00-21:00，月休</span></div>
+          <div class="tags"><span class="tag">澄川</span><span class="tag food">味噌拉麵</span><span class="tag hit">ラーメン HOKKAIDO 百名店 2025</span></div>
+          <p class="note">濃厚味噌與熱油膜很札幌，分數高但離市中心稍遠；適合認真吃拉麵的人。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010303/1000031/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%95%E3%81%A3%E3%81%BD%E3%82%8D%E7%B4%94%E9%80%A3+%E6%9C%AD%E5%B9%8C%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
       </div>
 
       <h3 class="category">燒肉</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">焼肉 グルマンズいとう</span><span class="hours">17:00-翌 3:00，週三休</span></div>
+          <div class="topline"><span class="name">焼肉 グルマンズいとう</span><span class="score">Tabelog 3.8台</span><span class="hours">17:00-翌 3:00，週三休</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">燒肉</span><span class="tag hit">Tabelog 焼肉 EAST 百名店 2025</span></div>
           <p class="note">札幌很難訂的人氣高級燒肉，推薦和牛與ホルモン；想去要盡早預約。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010103/1068431/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89+%E3%82%B0%E3%83%AB%E3%83%9E%E3%83%B3%E3%82%BA%E3%81%84%E3%81%A8%E3%81%86" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">炭火焼肉 にく式 すすきの店</span><span class="hours">平日約 18:00-翌 3:00</span></div>
+          <div class="topline"><span class="name">炭火焼肉 にく式 すすきの店</span><span class="score">Tabelog 3.6台</span><span class="hours">平日約 18:00-翌 3:00</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">燒肉</span><span class="tag hit">Tabelog 焼肉 EAST 百名店 2024</span></div>
           <p class="note">七輪炭火燒，厚切肉與高品質カルビ是賣點；比高級 omakase 燒肉更容易安排。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010103/1077658/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%82%AD%E7%81%AB%E7%84%BC%E8%82%89+%E3%81%AB%E3%81%8F%E5%BC%8F+%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">焼肉世界チャンピオン 本店</span><span class="hours">平日 18:00-23:00 / 假日 17:00-23:00</span></div>
+          <div class="topline"><span class="name">焼肉世界チャンピオン 本店</span><span class="score">Tabelog 3.4台</span><span class="hours">平日 18:00-23:00 / 假日 17:00-23:00</span></div>
           <div class="tags"><span class="tag">豊水すすきの</span><span class="tag food">燒肉</span><span class="tag hit">A5 黑毛和牛食べ放題</span></div>
           <p class="note">想吃燒肉吃到飽時可選，主打 A5 黑毛和牛與多種部位；地鐵站很近。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010103/1004914/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E4%B8%96%E7%95%8C%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -400,14 +439,14 @@
       <h3 class="category">涮涮鍋</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">牛しゃぶしゃぶ・すき焼専門店 禅</span><span class="hours">17:00-23:00</span></div>
+          <div class="topline"><span class="name">牛しゃぶしゃぶ・すき焼専門店 禅</span><span class="score">Tabelog 3.4台</span><span class="hours">17:00-23:00</span></div>
           <div class="tags"><span class="tag">狸小路附近</span><span class="tag food">涮涮鍋</span><span class="tag hit">已排 7/24 晚餐</span></div>
           <p class="note">A5 黑毛和牛、神戶牛、食べ放題選項都有；如果 7/24 已訂，這張留作確認資訊。</p>
           <div class="links"><a class="btn" href="https://www.hotpepper.jp/strJ000026908/" target="_blank" rel="noreferrer">Hot Pepper</a><a class="btn" href="https://shabu-zen.owst.jp/" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%97%E3%82%83%E3%81%B6+%E7%89%9B%E3%81%99%E3%81%8D+%E7%A6%85+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">牛禅 札幌駅前通り店</span><span class="hours">17:00-23:00</span></div>
+          <div class="topline"><span class="name">牛禅 札幌駅前通り店</span><span class="score">Tabelog 3.04</span><span class="hours">17:00-23:00</span></div>
           <div class="tags"><span class="tag">札幌站前通</span><span class="tag food">涮涮鍋</span><span class="tag hit">食べ放題 / 交通方便</span></div>
           <p class="note">涮涮鍋吃到飽，從札幌站或大通都方便；想吃肉但不想跑薄野可選。</p>
           <div class="links"><a class="btn" href="https://h002904.gorp.jp/" target="_blank" rel="noreferrer">店鋪頁</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E7%A6%85+%E6%9C%AD%E5%B9%8C%E9%A7%85%E5%89%8D%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -417,14 +456,14 @@
       <h3 class="category">壽喜燒</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">すき焼 三光舎</span><span class="hours">11:30-14:30 / 17:00-22:30</span></div>
+          <div class="topline"><span class="name">すき焼 三光舎</span><span class="score">Tabelog 3.59</span><span class="hours">11:30-14:30 / 17:00-22:30</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">壽喜燒</span><span class="tag hit">大正六年創業老店</span></div>
           <p class="note">秘傳味噌與牛肉壽喜燒是特色，氣氛比吃到飽更正式；週日/假日常休。</p>
           <div class="links"><a class="btn" href="https://www.sukiyaki-sankousha.jp/" target="_blank" rel="noreferrer">官方</a><a class="btn" href="https://h268800.gorp.jp/" target="_blank" rel="noreferrer">Gurunavi</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%8D%E7%84%BC+%E4%B8%89%E5%85%89%E8%88%8E+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">牛のいしざき</span><span class="hours">17:00-23:00，週日休</span></div>
+          <div class="topline"><span class="name">牛のいしざき</span><span class="score">Tabelog 3.6台</span><span class="hours">17:00-23:00，週日休</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">壽喜燒</span><span class="tag hit">えぞ但馬牛 / 個室</span></div>
           <p class="note">主打自社管理的えぞ但馬牛，油花漂亮但口感清爽；適合想吃高級牛肉鍋。</p>
           <div class="links"><a class="btn" href="https://www.gdiningsapporo.com/gourmet/meat_dish/ishizaki/" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%AE%E3%81%84%E3%81%97%E3%81%96%E3%81%8D+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -434,14 +473,14 @@
       <h3 class="category">湯咖哩</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">スープカリー hiri hiri 2号</span><span class="hours">約午餐-晚餐</span></div>
+          <div class="topline"><span class="name">スープカリー hiri hiri 2号</span><span class="score">Tabelog 3.6台</span><span class="hours">約午餐-晚餐</span></div>
           <div class="tags"><span class="tag">札幌站</span><span class="tag food">湯咖哩</span><span class="tag hit">Tabelog カレー EAST 百名店 2024</span></div>
           <p class="note">札幌站附近，動線方便；推薦雞腿蔬菜湯咖哩，適合第一次吃湯咖哩。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010101/1004285/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%BC%E3%83%97%E3%82%AB%E3%83%AA%E3%83%BC+hiri+hiri+2%E5%8F%B7" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
 
         <article class="card">
-          <div class="topline"><span class="name">スープカレー GARAKU</span><span class="hours">約 11:30-15:00 / 17:00-20:30</span></div>
+          <div class="topline"><span class="name">スープカレー GARAKU</span><span class="score">Tabelog 3.6台</span><span class="hours">約 11:30-15:00 / 17:00-20:30</span></div>
           <div class="tags"><span class="tag">大通/狸小路</span><span class="tag food">湯咖哩</span><span class="tag hit">札幌人氣名店</span></div>
           <p class="note">和風高湯底與香料平衡，推薦柔嫩雞腿與蔬菜；熱門時段常排隊。</p>
           <div class="links"><a class="btn" href="https://hokkaidodo.jp/soup-curry/s/garaku/" target="_blank" rel="noreferrer">店鋪資訊</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%BC%E3%83%97%E3%82%AB%E3%83%AC%E3%83%BC+GARAKU" target="_blank" rel="noreferrer">Google Maps</a></div>
@@ -451,7 +490,7 @@
       <h3 class="category">鰻魚</h3>
       <div class="cards">
         <article class="card">
-          <div class="topline"><span class="name">うなぎ二葉</span><span class="hours">約 11:00-20:30，週二休</span></div>
+          <div class="topline"><span class="name">うなぎ二葉</span><span class="score">Tabelog 3.4台</span><span class="hours">約 11:00-20:30，週二休</span></div>
           <div class="tags"><span class="tag">薄野</span><span class="tag food">鰻魚</span><span class="tag hit">1948 年創業老店</span></div>
           <p class="note">推薦鰻重，適合想補一餐日式鰻魚飯；Tabelog 顯示仍營業且可外帶/外送。</p>
           <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010103/1004712/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://gurunavi.com/en/h734100/rst/" target="_blank" rel="noreferrer">Gurunavi</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%AA%E3%81%8E%E4%BA%8C%E8%91%89+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
