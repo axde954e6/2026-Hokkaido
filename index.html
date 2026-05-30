@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>北海道 2026/7/18-7/26 行程</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #607080;
+      --line: #d9e2e8;
+      --paper: #fbfcf9;
+      --mist: #eef6f0;
+      --sky: #dfeff6;
+      --road: #2f6f73;
+      --food: #a54f3a;
+      --codex: #0f766e;
+      --night: #30364a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: end;
+      padding: 28px 18px 22px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(11, 34, 42, .35), rgba(11, 34, 42, .78)),
+        url("hokkaido-hero.png") center / cover no-repeat;
+    }
+
+    .hero-inner {
+      width: min(960px, 100%);
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.35rem, 9vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0;
+      font-size: 1.02rem;
+      color: rgba(255,255,255,.92);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 9px 11px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 8px;
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(10px);
+      font-size: .92rem;
+    }
+
+    main {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      padding: 18px 14px 64px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin: 0 -14px 18px;
+      padding: 10px 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+      background: rgba(251, 252, 249, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-width: 64px;
+      justify-content: center;
+      min-height: 38px;
+      margin-right: 6px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .notice {
+      border-left: 4px solid var(--codex);
+      padding: 12px 13px;
+      background: #ecfdf5;
+      margin: 0 0 18px;
+    }
+
+    .notice strong { color: var(--codex); }
+
+    .day {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .day h2 {
+      margin: 0 0 6px;
+      font-size: 1.45rem;
+      letter-spacing: 0;
+    }
+
+    .route {
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 800;
+      background: var(--sky);
+      color: #21485a;
+    }
+
+    .tag.drive { background: #e7f3ef; color: var(--road); }
+    .tag.codex { background: #ccfbf1; color: var(--codex); }
+    .tag.food { background: #fae7df; color: var(--food); }
+    .tag.sleep { background: #e8e8f2; color: var(--night); }
+
+    .items {
+      display: grid;
+      gap: 10px;
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 12px;
+    }
+
+    .topline {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .time {
+      flex: 0 0 auto;
+      min-width: 72px;
+      color: var(--road);
+      font-weight: 900;
+      font-size: .92rem;
+    }
+
+    .what {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .note {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: #f2f6f4;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .86rem;
+    }
+
+    .mapcode {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 8px;
+      border-radius: 8px;
+      background: #f7faf8;
+      border: 1px dashed #adc6bd;
+      color: #28524a;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: .86rem;
+    }
+
+    .section-title {
+      margin: 26px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .source-list a { color: #215f69; font-weight: 800; }
+
+    @media (min-width: 760px) {
+      .summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .item.wide { grid-column: 1 / -1; }
+      .hero { min-height: 72vh; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>北海道<br>夏日行程</h1>
+      <p class="subtitle">2026/7/18-7/26，前段自駕走旭川、美瑛、富良野、小樽，7/24 晚上還車後住札幌車站附近，用步行與地鐵收尾。</p>
+      <div class="summary">
+        <span class="pill">7/18-7/20 旭川 OMO7</span>
+        <span class="pill">7/21 起 札幌站附近</span>
+        <span class="pill">7/22 札幌 → 小樽</span>
+        <span class="pill">7/24 20:00 前還車</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="nav" aria-label="日期導覽">
+      <a href="#d718">7/18</a>
+      <a href="#d719">7/19</a>
+      <a href="#d720">7/20</a>
+      <a href="#d721">7/21</a>
+      <a href="#d722">7/22</a>
+      <a href="#d723">7/23</a>
+      <a href="#d724">7/24</a>
+      <a href="#d725">7/25</a>
+      <a href="#d726">7/26</a>
+    </nav>
+
+    <p class="notice"><strong>codex 標記</strong>：代表我依照你的住宿、移動方向與空白格補上的建議。營業時間和休園日仍建議出發前再點來源確認一次。</p>
+
+    <section class="day" id="d718">
+      <h2>7/18 六｜抵達北海道，開車到旭川</h2>
+      <p class="route">新千歲機場 → 租車 → 旭川 OMO7</p>
+      <div class="meta-row"><span class="tag drive">自駕</span><span class="tag sleep">住 OMO7 旭川</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">10:05-15:10</span><span class="what">搭乘飛機</span></div>
+          <p class="note">原 Excel 已填。抵達後接租車櫃台與接駁。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">15:30</span><span class="what">租車，新千歲機場</span></div>
+          <p class="note">在機場內接待處辦理手續，搭免費接送巴士約 9 分鐘。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">15:30-17:30</span><span class="what">開車前往旭川</span></div>
+          <div class="links"><span class="mapcode">OMO7 79 374 094*43</span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=OMO7+Asahikawa" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">成吉思汗 大黑屋 五丁目店 <span class="tag codex">codex</span></span></div>
+          <p class="note">旭川代表性成吉思汗，離 OMO7 與買物公園不遠；Tabelog 顯示五丁目店仍營業，16:00-23:30 左右。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/tw/hokkaido/A0104/A010401/1027848/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97+%E5%A4%A7%E9%BB%92%E5%B1%8B+%E4%BA%94%E4%B8%81%E7%9B%AE%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚上</span><span class="what">旭川平和通買物公園、旭川北彩都公園</span></div>
+          <p class="note">原 Excel 已填。抵達日不要排太滿，散步收尾剛好。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d719">
+      <h2>7/19 日｜美瑛、富良野花田路線</h2>
+      <p class="route">旭川 → 美瑛 → 富良野 → 白金青池 → 旭川</p>
+      <div class="meta-row"><span class="tag drive">自駕</span><span class="tag">晴天優先</span><span class="tag sleep">住 OMO7 旭川</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">08:00</span><span class="what">出發，先往青池與白鬚瀑布</span></div>
+          <p class="note">依 Excel note：青池、白鬚瀑布、十勝岳、純平、富田農場、四季彩之丘、美瑛神社。</p>
+          <div class="links"><span class="mapcode">青池 349 569 815*20</span><span class="mapcode">白鬚瀑布 796 182 482*58</span></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">10:00</span><span class="what">十勝岳望岳台</span></div>
+          <p class="note">天氣好才值得上去；雲厚就把時間留給花田。</p>
+          <div class="links"><a class="btn" href="https://maps.app.goo.gl/sY5QqmjR2Q6E55VS8" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">純平洋食 Junpei</span></div>
+          <p class="note">原 Excel 已填：海老、洋食。週一公休資訊需出發前再確認，今天是週日較適合排。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">富田農場、四季彩之丘、美瑛神社</span></div>
+          <p class="note">7 月薰衣草季，富田農場與四季彩之丘保留彈性，依塞車和天氣取捨。</p>
+          <div class="links"><span class="mapcode">富田農場 349 276 804*43</span><span class="mapcode">美瑛神社 389 012 200*27</span></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">蜂屋 五条創業店 <span class="tag codex">codex</span></span></div>
+          <p class="note">如果 7/18 已吃羊肉，今天可補旭川醬油拉麵；官方頁顯示一般 10:30-20:00，7 月下旬至 9 月中旬延長到 21:00 左右。</p>
+          <div class="links"><a class="btn" href="https://h389300.gorp.jp/" target="_blank" rel="noreferrer">官方/店鋪頁</a><a class="btn" href="https://tabelog.com/hokkaido/A0104/A010401/1000269/" target="_blank" rel="noreferrer">Tabelog</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d720">
+      <h2>7/20 一｜旭川市區與動物園</h2>
+      <p class="route">OMO7 → 上野ファーム → 旭山動物園 → 旭川神社 → 拉麵村</p>
+      <div class="meta-row"><span class="tag drive">自駕</span><span class="tag codex">codex 補上午與餐食</span><span class="tag sleep">住 OMO7 旭川</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">上野ファーム <span class="tag codex">codex</span></span></div>
+          <p class="note">7 月花況通常適合，離旭川市區不遠。若 7/19 花田已拍很滿，這格可改成睡晚一點。</p>
+          <div class="links"><span class="mapcode">795 086 50*45</span><a class="btn" href="https://www.hokkaido-garden.jp/garden01.html" target="_blank" rel="noreferrer">北海道 Garden</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">旭川拉麵村 <span class="tag codex">codex</span></span></div>
+          <p class="note">原 Excel 晚上有拉麵村；改到午餐比較順，晚上可留給大黑屋或飯店附近。</p>
+          <div class="links"><span class="mapcode">79 410 485*56</span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B7%9D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E6%9D%91" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">旭山動物園、旭川神社</span></div>
+          <p class="note">原 Excel 已填，可互換。動物園建議留 2.5-3 小時，神社當作前後備案。</p>
+          <div class="links"><span class="mapcode">旭山動物園 79 357 855*84</span><span class="mapcode">旭川神社 79 383 109*68</span><a class="btn" href="https://www.japan.travel/en/spot/1891/" target="_blank" rel="noreferrer">JNTO</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">成吉思汗大黑屋或旭川站前居酒屋 <span class="tag codex">codex</span></span></div>
+          <p class="note">如果 7/18 沒吃到大黑屋，今天補；若已吃過，改旭川站前輕鬆吃。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d721">
+      <h2>7/21 二｜旭川到札幌</h2>
+      <p class="route">旭川 → 砂川休息/甜點 → 札幌車站附近</p>
+      <div class="meta-row"><span class="tag drive">自駕</span><span class="tag codex">codex 補整天</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">男山 酒造り資料舘或上野ファーム備案 <span class="tag codex">codex</span></span></div>
+          <p class="note">從旭川離開前排一個輕量點。開車者不要試飲；若想拍花，改上野ファーム。</p>
+          <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%94%B7%E5%B1%B1+%E9%85%92%E9%80%A0%E3%82%8A%E8%B3%87%E6%96%99%E8%88%98" target="_blank" rel="noreferrer">Google Maps</a><span class="mapcode">上野 795 086 50*45</span></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">砂川ハイウェイオアシス / 北菓楼砂川本店 <span class="tag codex">codex</span></span></div>
+          <p class="note">旭川到札幌中間休息點，適合吃簡單午餐、買伴手禮和甜點。</p>
+          <div class="links"><a class="btn" href="https://www.kitakaro.com/ext/tenpo/sunagawa.html" target="_blank" rel="noreferrer">北菓楼官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E8%8F%93%E6%A5%BC+%E7%A0%82%E5%B7%9D%E6%9C%AC%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">北海道大學或札幌站周邊暖身 <span class="tag codex">codex</span></span></div>
+          <p class="note">抵達札幌先不要排太遠，停好車、寄行李，熟悉車站地下街。</p>
+          <div class="links"><span class="mapcode">飯店 9 521 627*82</span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo" target="_blank" rel="noreferrer">飯店地圖</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">札幌站附近湯咖哩或大通周邊 <span class="tag codex">codex</span></span></div>
+          <p class="note">把重點晚餐留給 7/23 奧芝商店、7/24 禪；今天用排隊壓力較低的店。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d722">
+      <h2>7/22 三｜札幌到小樽</h2>
+      <p class="route">札幌 → 三角市場 → 小樽運河/堺町通 → 天狗山 → 札幌</p>
+      <div class="meta-row"><span class="tag drive">自駕</span><span class="tag codex">codex 補整天</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">三角市場、舊手宮線、小樽運河 <span class="tag codex">codex</span></span></div>
+          <p class="note">先吃海鮮或逛市場，再往運河慢慢散步，避開午後人潮。</p>
+          <div class="links"><span class="mapcode">小樽站 164 719 411*78</span><span class="mapcode">運河 493 690 414*33</span><a class="btn" href="https://otaru-sakaimachi.com/wp-content/uploads/2024/03/map2024_en.pdf" target="_blank" rel="noreferrer">堺町地圖</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">若鶏時代 なると 本店 <span class="tag codex">codex</span></span></div>
+          <p class="note">半身炸雞名店，Tabelog 中文頁標示曾入選居酒屋百名店；若想吃壽司，改おたる政寿司本店。</p>
+          <div class="links"><span class="mapcode">なると 164 719 685*85</span><a class="btn" href="https://tabelog.com/cn/hokkaido/A0106/A010601/1000906/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://tabelog.com/hokkaido/A0106/A010601/1000209/" target="_blank" rel="noreferrer">政寿司備案</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">北一硝子、音樂盒堂、LeTAO 小樽本店 <span class="tag codex">codex</span></span></div>
+          <p class="note">堺町通集中走，少移車。甜點和伴手禮可在這段處理。</p>
+          <div class="links"><span class="mapcode">北一硝子 493 661 699*16</span><span class="mapcode">LeTAO 493 661 579*40</span></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">傍晚</span><span class="what">小樽天狗山夜景 <span class="tag codex">codex</span></span></div>
+          <p class="note">天氣好才上山；若下雨就留在運河倉庫群和咖啡店。</p>
+          <div class="links"><span class="mapcode">164 657 014*35</span><a class="btn" href="https://tenguyama.ckk.chuo-bus.co.jp/access" target="_blank" rel="noreferrer">天狗山交通</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d723">
+      <h2>7/23 四｜札幌西側：白色戀人、圓山、北海道神宮</h2>
+      <p class="route">札幌站 → 白色戀人公園 → 圓山動物園/圓山公園 → 北海道神宮 → 伏見稻荷 → 湯咖哩</p>
+      <div class="meta-row"><span class="tag drive">自駕或地鐵</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">白色戀人公園</span></div>
+          <p class="note">原 Excel 已填。甜點、工廠參觀和伴手禮集中處理。</p>
+          <div class="links"><span class="mapcode">9 603 301*88</span><a class="btn" href="https://www.shiroikoibitopark.jp/en/" target="_blank" rel="noreferrer">官方</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">円山公園站周邊咖啡/簡餐 <span class="tag codex">codex</span></span></div>
+          <p class="note">避免圓山區移動時再回札幌站吃飯；可找輕食，把胃留給晚餐湯咖哩。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">円山動物園、円山公園、北海道神宮</span></div>
+          <p class="note">原 Excel 已填。北海道神宮官方建議從地鐵円山公園站步行約 15 分鐘。</p>
+          <div class="links"><span class="mapcode">円山動物園 9 456 749*63</span><a class="btn" href="https://visit.sapporo.travel/discover/art-culture/hokkaido-shrine/" target="_blank" rel="noreferrer">北海道神宮</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">湯咖哩：奧芝商店 實家</span></div>
+          <p class="note">原 Excel 已填奧芝商店；札幌站舊店 Tabelog 顯示移轉，現在以「實家」新址為主。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/hokkaido/A0101/A010102/1074595/dtlmenu/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%BC%E3%83%97%E3%82%AB%E3%83%AC%E3%83%BC%E5%A5%A5%E8%8A%9D%E5%95%86%E5%BA%97+%E5%AE%9F%E5%AE%B6" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d724">
+      <h2>7/24 五｜札幌經典市區，晚上還車</h2>
+      <p class="route">二條市場 → 舊道廳/時計台 → 大通公園 → 狸小路 → 禪 → 還車</p>
+      <div class="meta-row"><span class="tag drive">20:00 前還車</span><span class="tag food">19:00 禪</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">二條市場、舊北海道廳、時計台</span></div>
+          <p class="note">原 Excel 已填。這天其實適合把車停好用步行，減少札幌市區停車壓力。</p>
+          <div class="links"><a class="btn" href="https://visit.sapporo.travel/" target="_blank" rel="noreferrer">Visit Sapporo</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E6%9D%A1%E5%B8%82%E5%A0%B4+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">二條市場</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">味噌拉麵：札幌らーめん共和国 <span class="tag codex">codex</span></span></div>
+          <p class="note">離札幌站近，排雨天也方便；若想更經典，可改薄野拉麵橫丁。</p>
+          <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%E5%85%B1%E5%92%8C%E5%9B%BD" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">札幌電視塔、大通公園、狸小路商店街</span></div>
+          <p class="note">原 Excel 已填。狸小路放晚餐前，買藥妝與伴手禮順路。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">19:00</span><span class="what">禪：牛しゃぶ 牛すき 禅</span></div>
+          <p class="note">原 Excel 已填，MapCode/GPS 欄為 GAGV87TXA3。晚餐後回札幌站南口還車。</p>
+          <div class="links"><span class="mapcode">GAGV87TXA3</span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%97%E3%82%83%E3%81%B6+%E7%89%9B%E3%81%99%E3%81%8D+%E7%A6%85+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item wide">
+          <div class="topline"><span class="time">20:00 前</span><span class="what">還車：トヨタレンタカー札幌駅南口店</span></div>
+          <p class="note">依你最新說法放在 7/24 還車。還車後接下來兩天以步行、地鐵、JR 為主。</p>
+          <div class="links"><span class="mapcode">9 521 627*82</span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%A8%E3%82%BF%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC+%E6%9C%AD%E5%B9%8C%E9%A7%85%E5%8D%97%E5%8F%A3%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d725">
+      <h2>7/25 六｜北大、札幌站購物與展望台</h2>
+      <p class="route">北海道大學 → 札幌站百貨 → JR Tower T38</p>
+      <div class="meta-row"><span class="tag">步行/地鐵</span><span class="tag codex">codex 補晚餐</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">早上</span><span class="what">北海道大學、博物館、北大植物園</span></div>
+          <p class="note">原 Excel 已填。銀杏大道夏天不是金黃季，但校園、大野池和博物館仍適合慢走。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">北大周邊或札幌站便當 <span class="tag codex">codex</span></span></div>
+          <p class="note">想輕鬆就回札幌站，下午直接接百貨與地下街。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">下午</span><span class="what">札幌車站百貨逛街</span></div>
+          <p class="note">原 Excel 已填。大丸、Stellar Place、ESTA 周邊動線集中。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚餐</span><span class="what">燒肉備案：Yakiniku Dining MEGUMI <span class="tag codex">codex</span></span></div>
+          <p class="note">原 Excel 放了 Tabelog 燒肉連結；若想留在札幌站附近，這天適合安排燒肉或成吉思汗。</p>
+          <div class="links"><a class="btn" href="https://tabelog.com/tw/hokkaido/A0101/A010102/1077746/" target="_blank" rel="noreferrer">原 Tabelog</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">晚上</span><span class="what">JR Tower T38 展望台</span></div>
+          <p class="note">原 Excel 已填。把展望台放最後一晚，天氣不好可和購物順序互換。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="d726">
+      <h2>7/26 日｜回程日</h2>
+      <p class="route">札幌站 → 新千歲機場 → 搭飛機</p>
+      <div class="meta-row"><span class="tag">JR/機場</span><span class="tag codex">codex 補空白</span></div>
+      <div class="items">
+        <article class="item">
+          <div class="topline"><span class="time">10:00 前</span><span class="what">退房、札幌站寄行李 <span class="tag codex">codex</span></span></div>
+          <p class="note">如果飯店可寄放，先把最後採買放札幌站；不想折返就直接帶去機場。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">10:38</span><span class="what">搭 JR 前往新千歲機場</span></div>
+          <p class="note">原 Excel 有 10:00、10:38 時間點但未填內容，這裡補成交通段。</p>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">午餐</span><span class="what">新千歲機場：拉麵道場或海鮮/豬丼 <span class="tag codex">codex</span></span></div>
+          <p class="note">機場餐廳選擇多，適合把北海道最後一餐和伴手禮一次處理完。</p>
+          <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4+%E6%8B%89%E9%BA%B5%E9%81%93%E5%A0%B4" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time">16:25-19:35</span><span class="what">搭飛機</span></div>
+          <p class="note">原 Excel 已填。建議 14:00 左右進安檢前完成採買與退稅。</p>
+        </article>
+      </div>
+    </section>
+
+    <h2 class="section-title">資料來源與查詢筆記</h2>
+    <ul class="source-list">
+      <li><a href="https://www.japan.travel/en/spot/1891/" target="_blank" rel="noreferrer">JNTO 旭山動物園</a>、<a href="https://www.biei-hokkaido.jp/en/shirogane-blue-pond" target="_blank" rel="noreferrer">美瑛觀光協會 青池</a>、<a href="https://www.japan.travel/en/spot/1889/" target="_blank" rel="noreferrer">JNTO 青池</a></li>
+      <li><a href="https://www.shiroikoibitopark.jp/en/" target="_blank" rel="noreferrer">白色戀人公園官方</a>、<a href="https://visit.sapporo.travel/discover/art-culture/hokkaido-shrine/" target="_blank" rel="noreferrer">Visit Sapporo 北海道神宮</a></li>
+      <li><a href="https://otaru-sakaimachi.com/wp-content/uploads/2024/03/map2024_en.pdf" target="_blank" rel="noreferrer">小樽堺町通商店街地圖</a>、<a href="https://tenguyama.ckk.chuo-bus.co.jp/access" target="_blank" rel="noreferrer">小樽天狗山交通</a></li>
+      <li><a href="https://hokkaidodo.jp/mapcode/otaru/" target="_blank" rel="noreferrer">小樽 MapCode 清單</a>、<a href="https://worldnet-rentacar.co.jp/wordpress/wp-content/uploads/2020/01/d6f374fc169b864dcb020d6ad900e0c7.pdf" target="_blank" rel="noreferrer">World Net Rent-a-Car 北海道 MapCode PDF</a></li>
+      <li><a href="https://tabelog.com/tw/hokkaido/A0104/A010401/1027848/" target="_blank" rel="noreferrer">大黑屋五丁目 Tabelog</a>、<a href="https://tabelog.com/hokkaido/A0104/A010401/1000269/" target="_blank" rel="noreferrer">蜂屋五条 Tabelog</a>、<a href="https://tabelog.com/cn/hokkaido/A0106/A010601/1000906/" target="_blank" rel="noreferrer">若鶏時代なると Tabelog</a></li>
+    </ul>
+  </main>
+</body>
+</html>
