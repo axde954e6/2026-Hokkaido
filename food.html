@@ -229,6 +229,26 @@
 
     .source-list a { color: #215f69; font-weight: 800; }
 
+    .top-button {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 20;
+      min-height: 42px;
+      min-width: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #1f2933;
+      color: white;
+      border: 1px solid rgba(255,255,255,.5);
+      box-shadow: 0 8px 20px rgba(31, 41, 51, .22);
+      text-decoration: none;
+      font-weight: 950;
+      font-size: 1.05rem;
+    }
+
     @media (min-width: 760px) {
       .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       header { min-height: 48vh; }
@@ -644,5 +664,6 @@
       </ul>
     </section>
   </main>
+  <a class="top-button" href="#" aria-label="回到最上面">↑</a>
 </body>
 </html>
