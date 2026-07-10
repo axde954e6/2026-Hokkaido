@@ -242,6 +242,31 @@
       font-size: .92rem;
     }
 
+    .time.reserved { color: #c62828; }
+
+    .time.flight-time {
+      min-width: auto;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #173f73;
+      color: white;
+      box-shadow: 0 3px 8px rgba(23, 63, 115, .24);
+    }
+
+    .flight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 6px;
+      padding: 2px 8px;
+      border: 2px solid #173f73;
+      border-radius: 8px;
+      color: #173f73;
+      background: #edf5ff;
+      font-size: .86rem;
+      white-space: nowrap;
+    }
+
     .what {
       flex: 1 1 auto;
       min-width: 0;
@@ -398,7 +423,10 @@
       <div class="meta-row"><span class="tag city">主城市：旭川</span><span class="tag drive">自駕</span><span class="tag sleep">住 OMO7 旭川</span></div>
       <div class="items">
         <article class="item">
-          <div class="topline"><span class="time">10:05-15:10</span><span class="what">搭乘飛機</span></div>
+          <div class="topline"><span class="time">06:15</span><span class="what">叫車出發</span></div>
+        </article>
+        <article class="item">
+          <div class="topline"><span class="time flight-time">10:05-15:10</span><span class="what">搭乘飛機 <span class="flight-badge"><span aria-hidden="true">✈</span> JX850</span></span></div>
           <p class="note">原 Excel 已填。抵達後接租車櫃台與接駁。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4" target="_blank" rel="noreferrer">新千歲機場 Google Maps</a></div>
         </article>
@@ -633,7 +661,7 @@
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=COCONO+SUSUKINO" target="_blank" rel="noreferrer">COCONO SUSUKINO Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=NIKKA+Whisky+Sign+Susukino+Sapporo" target="_blank" rel="noreferrer">NIKKA 威士忌看板 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Don+Quijote+Susukino+Sapporo" target="_blank" rel="noreferrer">Don Quijote 薄野店 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Matsumoto+Kiyoshi+Susukino+Sapporo" target="_blank" rel="noreferrer">Matsumoto Kiyoshi 薄野 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Animate+Sapporo" target="_blank" rel="noreferrer">Animate 札幌店 Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">18:30-20:00</span><span class="what">SAPPORO NIKUAZABU（燒肉，已預約）</span></div>
+          <div class="topline"><span class="time reserved">18:30-20:00</span><span class="what">SAPPORO NIKUAZABU（燒肉，已預約）</span></div>
           <p class="note">薄野逛完後直接前往燒肉，不需要回飯店或折返。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=SAPPORO+NIKUAZABU" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
@@ -666,7 +694,7 @@
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0" target="_blank" rel="noreferrer">時計台 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E9%9B%BB%E8%A6%96%E5%A1%94" target="_blank" rel="noreferrer">電視塔 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%8B%B8%E5%B0%8F%E8%B7%AF%E5%95%86%E5%BA%97%E8%A1%97" target="_blank" rel="noreferrer">狸小路 Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">19:00</span><span class="what">禪：牛しゃぶ 牛すき 禅</span></div>
+          <div class="topline"><span class="time reserved">19:00</span><span class="what">禪：牛しゃぶ 牛すき 禅</span></div>
           <p class="note">原 Excel 已填。還車已改到 7/23，這晚可專心吃飯與逛狸小路/大通周邊。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%97%E3%82%83%E3%81%B6+%E7%89%9B%E3%81%99%E3%81%8D+%E7%A6%85+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
@@ -694,9 +722,10 @@
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E4%B8%B8%E6%9C%AD%E5%B9%8C%E5%BA%97" target="_blank" rel="noreferrer">大丸 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Stellar+Place+Sapporo" target="_blank" rel="noreferrer">Stellar Place Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E9%A7%85" target="_blank" rel="noreferrer">札幌站 Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">晚餐</span><span class="what">燒肉備案：Yakiniku Dining MEGUMI <span class="tag codex">codex</span></span></div>
-          <p class="note">原 Excel 放了 Tabelog 燒肉連結；若想留在札幌站附近，這天適合安排燒肉、壽司或居酒屋。</p>
-          <div class="links"><a class="btn" href="https://tabelog.com/tw/hokkaido/A0101/A010102/1077746/" target="_blank" rel="noreferrer">原 Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Dining+MEGUMI+Sapporo" target="_blank" rel="noreferrer">Google Maps</a></div>
+          <div class="topline"><span class="time reserved">17:00–19:00</span><span class="what">札幌かに本家 札幌駅前本店（Sapporo Kanihonke Sapporo Station Branch） <span class="tag food">✅ 已確認（Reservation Confirmed）</span></span></div>
+          <p class="note">2026/07/25（六），2 位，禁菸席（Non-smoking）。已收到餐廳正式確認信，用餐時間限制為 2 小時。</p>
+          <p class="note">當天若遲到超過 20 分鐘，餐廳可能取消訂位。</p>
+          <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sapporo+Kanihonke+Sapporo+Station+Branch" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
         <article class="item">
           <div class="topline"><span class="time">晚上</span><span class="what">JR Tower T38 展望台</span></div>
@@ -727,7 +756,7 @@
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4+%E6%8B%89%E9%BA%B5%E9%81%93%E5%A0%B4" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">16:25-19:35</span><span class="what">搭飛機</span></div>
+          <div class="topline"><span class="time flight-time">16:25-19:35</span><span class="what">搭飛機 <span class="flight-badge"><span aria-hidden="true">✈</span> JX851</span></span></div>
           <p class="note">原 Excel 已填。建議 14:00 左右進安檢前完成採買與退稅。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4" target="_blank" rel="noreferrer">新千歲機場 Google Maps</a></div>
         </article>
