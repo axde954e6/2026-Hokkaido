@@ -215,6 +215,57 @@
     .tag.food { background: #fae7df; color: var(--food); }
     .tag.sleep { background: #e8e8f2; color: var(--night); }
 
+    .shopping-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .store-group {
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8faf9;
+    }
+
+    .store-group-title { color: var(--ink); }
+
+    .store-label {
+      display: block;
+      margin: 7px 0 6px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 900;
+    }
+
+    .store-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .store-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 10px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      background: white;
+      color: #245b66;
+      font-size: .86rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .store-chip::after { content: " ↗"; }
+    .store-group.tokyu .store-chip { color: #1656a3; background: #eef5ff; }
+    .store-group.daimaru .store-chip { color: #8a5700; background: #fff4d6; }
+    .store-group.stellar .store-chip { color: #087f5b; background: #eaf8f1; }
+    .store-group.apia .store-chip { color: #6f42a1; background: #f5edff; }
+
     .items {
       display: grid;
       gap: 10px;
@@ -521,11 +572,11 @@
 
     <section class="day" id="d721">
       <h2>2026/7/21（二）｜札幌｜Road Trip：旭川到札幌</h2>
-      <p class="route">旭川 → Nice to Have：男山酒造/上野ファーム → 砂川 Highway Oasis → 札幌站商圈 → 赤れんが廳舍 → 伏見稻荷神社 → 藻岩山夜景 → 京王廣場飯店</p>
+      <p class="route">旭川 → Nice to Have：男山酒造/上野ファーム → 砂川 Highway Oasis → 京王廣場飯店 Check-in → 札幌車站商圈 Shopping → 晚餐 → 藻岩山夜景</p>
       <div class="meta-row"><span class="tag city">主城市：札幌</span><span class="tag drive">自駕</span><span class="tag codex">codex 補整天</span><span class="tag sleep">住 札幌京王廣場飯店</span></div>
       <div class="items">
         <article class="item">
-          <div class="topline"><span class="time">早上</span><span class="what">Nice to Have：男山 酒造り資料舘 / 上野ファーム <span class="tag codex">codex</span></span></div>
+          <div class="topline"><span class="time">Nice to Have</span><span class="what">男山 酒造り資料舘 / 上野ファーム <span class="tag codex">⭐ Nice to Have（時間充裕再前往）</span></span></div>
           <p class="note">這兩個景點改為 Nice to Have。如果想早點抵達札幌，可以直接從旭川出發前往砂川 Highway Oasis，不一定需要安排這個停留點。如果時間充裕，可依照當天天氣與精神狀況二擇一即可，不建議兩個都去。</p>
           <ul class="sub-list">
             <li>男山 酒造り資料舘</li>
@@ -547,18 +598,23 @@
           <div class="links"><a class="btn" href="https://www.kitakaro.com/ext/tenpo/sunagawa.html" target="_blank" rel="noreferrer">北菓楼官方</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sunagawa+Highway+Oasis" target="_blank" rel="noreferrer">Sunagawa Highway Oasis Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E8%8F%93%E6%A5%BC+%E7%A0%82%E5%B7%9D%E3%83%8F%E3%82%A4%E3%82%A6%E3%82%A7%E3%82%A4%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B9" target="_blank" rel="noreferrer">北菓樓 Highway Oasis Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">下午</span><span class="what">飯店 check-in、札幌站商圈 <span class="tag codex">codex</span></span></div>
-          <p class="note">抵達札幌後先停車、寄行李，札幌站地下街、大丸、Stellar Place 當作輕鬆暖身，不要排太硬。</p>
-          <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo+9+521+627*82" target="_blank" rel="noreferrer">飯店 9 521 627*82</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E9%A7%85" target="_blank" rel="noreferrer">札幌站 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E4%B8%B8%E6%9C%AD%E5%B9%8C%E5%BA%97" target="_blank" rel="noreferrer">大丸 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Stellar+Place+Sapporo" target="_blank" rel="noreferrer">Stellar Place Google Maps</a></div>
+          <div class="topline"><span class="time">下午</span><span class="what">Check-in：札幌京王廣場飯店</span></div>
+          <p class="note">抵達札幌後先停車、辦理入住或寄放行李，再輕裝前往札幌車站商圈。</p>
+          <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo+9+521+627*82" target="_blank" rel="noreferrer">飯店 9 521 627*82</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Sapporo" target="_blank" rel="noreferrer">飯店 Google Maps</a></div>
+        </article>
+        <article class="item wide">
+          <div class="topline"><span class="time">Shopping</span><span class="what">🛍️ 札幌車站商圈（Shopping）</span></div>
+          <p class="note">📍 JR 札幌站周邊，各商場皆可透過室內通道互相連通。⏰ 建議停留 3～5 小時；適合入住後自由逛街、最後採買或作為下雨備案。</p>
+          <ul class="shopping-list">
+            <li class="store-group tokyu"><strong class="store-group-title">🏬 東急百貨（Tokyu Department Store）</strong><span class="store-label">推薦店家</span><div class="store-links"><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=UNIQLO+Tokyu+Department+Store+Sapporo" target="_blank" rel="noreferrer">UNIQLO</a><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=GU+Tokyu+Department+Store+Sapporo" target="_blank" rel="noreferrer">GU</a><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tokyu+Department+Store+Sapporo" target="_blank" rel="noreferrer">Bic Camera</a><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=Hands+Tokyu+Department+Store+Sapporo" target="_blank" rel="noreferrer">Hands</a></div></li>
+            <li class="store-group daimaru"><strong class="store-group-title">🏬 大丸札幌（Daimaru）</strong><span class="store-label">推薦店家</span><div class="store-links"><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Sapporo+Daimaru" target="_blank" rel="noreferrer">Pokémon Center Sapporo（8F）</a></div></li>
+            <li class="store-group stellar"><strong class="store-group-title">🏬 JR Tower Stellar Place</strong><span class="store-label">推薦店家</span><div class="store-links"><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=MUJI+JR+Tower+Stellar+Place+Sapporo" target="_blank" rel="noreferrer">無印良品 MUJI</a></div></li>
+            <li class="store-group apia"><strong class="store-group-title">🚇 APIA 地下街</strong><span class="store-label">推薦店家</span><div class="store-links"><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=OWNDAYS+APIA+Sapporo" target="_blank" rel="noreferrer">OWNDAYS</a><a class="store-chip" href="https://www.google.com/maps/search/?api=1&query=3COINS+APIA+Sapporo" target="_blank" rel="noreferrer">3COINS</a></div></li>
+          </ul>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">傍晚前</span><span class="what">北海道廳舊本廳舍 赤れんが廳舍</span></div>
-          <p class="note">赤れんが廳舍已重新開放，離札幌站和飯店都近，適合放在轉場日順路走。</p>
-          <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E9%81%93%E5%BA%81%E6%97%A7%E6%9C%AC%E5%BA%81%E8%88%8E+9+522+336*87" target="_blank" rel="noreferrer">赤れんが 9 522 336*87</a><a class="btn" href="https://www.hokkaido-redbrick.jp/en/" target="_blank" rel="noreferrer">赤れんが官方</a></div>
-        </article>
-        <article class="item">
-          <div class="topline"><span class="time">黃昏前</span><span class="what">札幌伏見稻荷神社 <span class="tag codex">codex</span></span></div>
-          <p class="note">伏見稻荷與藻岩山方向接近，適合黃昏前順路停留，停留約 20-40 分鐘。</p>
+          <div class="topline"><span class="time">Nice to Have</span><span class="what">札幌伏見稻荷神社 <span class="tag codex">⭐ Nice to Have（時間充裕再前往）</span></span></div>
+          <p class="note">不列入主要行程順序。若購物提早結束、天氣與精神狀況良好，再於前往藻岩山途中順路停留約 20～40 分鐘。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E4%BC%8F%E8%A6%8B%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE" target="_blank" rel="noreferrer">伏見稻荷 Google Maps</a></div>
         </article>
         <article class="item">
@@ -680,7 +736,7 @@
       <div class="items">
         <article class="item">
           <div class="topline"><span class="time">早上</span><span class="what">赤れんが廳舍、大通公園</span></div>
-          <p class="note">這天已還車，建議用步行與地鐵。若 7/21 已看過赤れんが廳舍，這天可直接從大通公園開始。</p>
+          <p class="note">這天已還車，建議用步行與地鐵，從赤れんが廳舍一路散步到大通公園。</p>
           <div class="links"><a class="btn" href="https://visit.sapporo.travel/" target="_blank" rel="noreferrer">Visit Sapporo</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E8%B5%A4%E3%82%8C%E3%82%93%E3%81%8C%E5%BA%81+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">赤れんが Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%80%9A%E5%85%AC%E5%9C%92+%E6%9C%AD%E5%B9%8C" target="_blank" rel="noreferrer">大通公園 Google Maps</a></div>
         </article>
         <article class="item">
