@@ -125,6 +125,102 @@
 
     .notice strong { color: var(--codex); }
 
+    .traffic-alert {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 0 0 14px;
+      padding: 14px;
+      border: 2px solid #d97706;
+      border-radius: 10px;
+      background: #fff7d6;
+      box-shadow: 0 5px 14px rgba(146, 89, 0, .15);
+    }
+
+    .traffic-alert-copy { min-width: 0; }
+
+    .traffic-alert-title {
+      display: block;
+      color: #8a4b00;
+      font-size: 1.05rem;
+      font-weight: 950;
+    }
+
+    .traffic-alert-note {
+      display: block;
+      margin-top: 3px;
+      color: #705318;
+      font-size: .88rem;
+    }
+
+    .traffic-alert-link {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 13px;
+      border-radius: 8px;
+      background: #b45309;
+      color: white;
+      font-weight: 950;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .day-notes {
+      margin: 0 0 14px;
+      padding: 12px 14px;
+      border: 1px solid #c9d9d2;
+      border-radius: 9px;
+      background: #f4f8f5;
+    }
+
+    .day-notes-title {
+      display: block;
+      color: #28524a;
+      font-weight: 900;
+    }
+
+    .day-notes .sub-list { margin-top: 6px; }
+
+    .schedule-meta {
+      display: grid;
+      gap: 0;
+      margin-top: 8px;
+      padding: 0;
+      border: 1px solid #d5e1dc;
+      border-left: 3px solid var(--road);
+      border-radius: 6px;
+      background: #f7faf8;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 750;
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1fr) minmax(0, 1.25fr);
+      align-items: stretch;
+      line-height: 1.45;
+    }
+
+    .schedule-row + .schedule-row { border-top: 1px solid #e3ebe7; }
+
+    .schedule-row > span {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      min-height: 36px;
+      padding: 5px 8px;
+    }
+
+    .schedule-row > span + span { border-left: 1px solid #d5e1dc; }
+
+    .schedule-place { color: var(--ink); font-weight: 850; }
+
     .stay-section {
       margin: 0 0 20px;
       padding: 16px 0 18px;
@@ -214,6 +310,7 @@
     .tag.codex { background: #ccfbf1; color: var(--codex); }
     .tag.food { background: #fae7df; color: var(--food); }
     .tag.sleep { background: #e8e8f2; color: var(--night); }
+    .tag-link { text-decoration: none; }
 
     .shopping-list {
       display: grid;
@@ -416,6 +513,11 @@
       .item.wide { grid-column: 1 / -1; }
       .hero { min-height: 72vh; }
     }
+
+    @media (max-width: 520px) {
+      .traffic-alert { align-items: stretch; flex-direction: column; }
+      .traffic-alert-link { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -507,29 +609,51 @@
       <h2>2026/7/19（日）｜旭川｜美瑛、富良野花田路線</h2>
       <p class="route">旭川 → 美瑛 → 富良野 → 白金青池 → 旭川</p>
       <div class="meta-row"><span class="tag city">主城市：旭川</span><span class="tag drive">自駕</span><span class="tag">晴天優先</span><span class="tag sleep">住 OMO7 旭川</span></div>
+      <aside class="traffic-alert" aria-label="美瑛即時停車與觀光人流資訊">
+        <div class="traffic-alert-copy"><span class="traffic-alert-title">🚗 出發前／行車途中：查看即時停車與觀光人流</span><span class="traffic-alert-note">涵蓋青池、白鬚瀑布、十勝岳望岳台等美瑛景點；建議由副駕操作，依現場資訊調整停留順序。</span></div>
+        <a class="traffic-alert-link" href="https://biei-konzatsu.jp/" target="_blank" rel="noreferrer">立即查看美瑛混雜狀況 MAP ↗</a>
+      </aside>
+      <aside class="day-notes" aria-label="7月19日今日注意事項">
+        <strong class="day-notes-title">今日注意事項</strong>
+        <ul class="sub-list">
+          <li>🌅 <strong>07:20 出發：</strong>已有充足日照，也較能避開主要人潮。</li>
+          <li>🚗 <strong>青池停車：</strong>旺季可能排隊，目標 08:40 左右抵達。</li>
+          <li>🌋 <strong>十勝岳望岳台：</strong>通常 20～30 分鐘即可；預留時間用於休息與銜接午餐，起霧可提早離開。</li>
+          <li>🍤 <strong>Junpei：</strong>10:55 抵達，爭取 11:00 第一輪入店。</li>
+          <li>🌸 <strong>富田農場：</strong>午餐後直接前往，避免再插入長時間景點。</li>
+          <li>🌦️ <strong>天氣變化：</strong>天候轉差時優先保留富田農場，其他下午景點可縮短。</li>
+          <li>📱 <strong>壅塞 MAP：</strong>除非有事故或長時間塞車，否則不要任意顛倒路線。</li>
+          <li>⛽ <strong>確認油量：</strong>進入白金溫泉與十勝岳山區前先補足。</li>
+        </ul>
+      </aside>
       <div class="items">
         <article class="item">
-          <div class="topline"><span class="time">08:00</span><span class="what">出發，先往青池與白鬚瀑布</span></div>
+          <div class="topline"><span class="time">07:20</span><span class="what">出發，先往青池與白鬚瀑布</span></div>
+          <div class="schedule-meta"><div class="schedule-row"><span class="schedule-place">OMO7 旭川出發</span><span>出發 07:20</span><span></span></div><div class="schedule-row"><span class="schedule-place">白鬚瀑布</span><span>抵達 08:15</span><span>停留 15～20 分鐘</span></div><div class="schedule-row"><span class="schedule-place">青池</span><span>抵達 08:40</span><span>停留 45 分鐘</span></div></div>
           <p class="note">依 Excel note：青池、白鬚瀑布、十勝岳、純平、富田農場、四季彩之丘、美瑛神社。</p>
           <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E9%87%91%E9%9D%92%E3%81%84%E6%B1%A0+349+569+815*20" target="_blank" rel="noreferrer">青池 349 569 815*20</a><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E3%81%B2%E3%81%92%E3%81%AE%E6%BB%9D+796+182+482*58" target="_blank" rel="noreferrer">白鬚瀑布 796 182 482*58</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E9%87%91%E9%9D%92%E3%81%84%E6%B1%A0" target="_blank" rel="noreferrer">青池 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E3%81%B2%E3%81%92%E3%81%AE%E6%BB%9D" target="_blank" rel="noreferrer">白鬚瀑布 Google Maps</a></div>
         </article>
         <article class="item">
           <div class="topline"><span class="time">10:00</span><span class="what">十勝岳望岳台</span></div>
-          <p class="note">天氣好才值得上去；雲厚就把時間留給花田。</p>
+          <div class="schedule-meta"><div class="schedule-row"><span class="schedule-place">十勝岳望岳台</span><span>抵達 09:55</span><span>停留 40～45 分鐘</span></div></div>
+          <p class="note">景點本身通常約 20～30 分鐘即可；這次預留 40～45 分鐘，是為了休息、拍照並銜接 Junpei 11:00 開店。天氣好才值得停留，若雲霧濃或視野不佳可提早離開，把時間留給花田。</p>
           <div class="links"><a class="btn" href="https://maps.app.goo.gl/sY5QqmjR2Q6E55VS8" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
         <article class="item">
           <div class="topline"><span class="time">午餐</span><span class="what">純平洋食 Junpei</span></div>
+          <div class="schedule-meta"><div class="schedule-row"><span class="schedule-place">餐廳抵達</span><span>抵達 10:55</span><span>等候至 11:00 開店</span></div><div class="schedule-row"><span class="schedule-place">Junpei 午餐</span><span>11:00～11:50</span><span>停留約 50 分鐘</span></div></div>
           <p class="note">原 Excel 已填：海老、洋食。週一公休資訊需出發前再確認，今天是週日較適合排。</p>
           <div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E7%B4%94%E5%B9%B3%E6%B4%8B%E9%A3%9F+Junpei+%E7%BE%8E%E7%91%9B" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
         <article class="item">
-          <div class="topline"><span class="time">下午</span><span class="what">富田農場、四季彩之丘、美瑛神社</span></div>
+          <div class="topline"><span class="time">下午</span><span class="what">富田農場、四季彩之丘、美瑛神社 <a class="tag food tag-link" href="https://www.farm-tomita.co.jp/cn/" target="_blank" rel="noreferrer">🌸 官方花況・天氣 ↗</a></span></div>
+          <div class="schedule-meta"><div class="schedule-row"><span class="schedule-place">富田農場</span><span>抵達 12:20</span><span>停留約 90 分鐘</span></div><div class="schedule-row"><span class="schedule-place">四季彩之丘</span><span>抵達 14:05</span><span>停留約 60～75 分鐘</span></div><div class="schedule-row"><span class="schedule-place">美瑛神社</span><span>抵達 15:30</span><span>停留約 15 分鐘</span></div><div class="schedule-row"><span class="schedule-place">拼布之路</span><span>抵達 15:50</span><span>停留約 40～50 分鐘</span></div></div>
           <p class="note">7 月薰衣草季，富田農場與四季彩之丘保留彈性，依塞車和天氣取捨。</p>
           <div class="links"><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E5%AF%8C%E7%94%B0+349+276+804*43" target="_blank" rel="noreferrer">富田農場 349 276 804*43</a><a class="mapcode" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E7%A5%9E%E7%A4%BE+389+012+200*27" target="_blank" rel="noreferrer">美瑛神社 389 012 200*27</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E5%AD%A3%E5%BD%A9%E3%81%AE%E4%B8%98" target="_blank" rel="noreferrer">四季彩之丘 Google Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%83%E3%83%81%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E8%B7%AF+%E7%BE%8E%E7%91%9B" target="_blank" rel="noreferrer">拼布之路 Google Maps</a></div>
         </article>
         <article class="item">
           <div class="topline"><span class="time">晚餐</span><span class="what">蜂屋 五条創業店 <span class="tag codex">codex</span></span></div>
+          <div class="schedule-meta"><div class="schedule-row"><span class="schedule-place">返回旭川</span><span>約 17:30</span><span></span></div><div class="schedule-row"><span class="schedule-place">晚餐</span><span>約 18:10</span><span>依現場候位狀況</span></div></div>
           <p class="note">如果 7/18 已吃燒鳥，今天可補旭川醬油拉麵；官方頁顯示一般 10:30-20:00，7 月下旬至 9 月中旬延長到 21:00 左右。</p>
           <div class="links"><a class="btn" href="https://h389300.gorp.jp/" target="_blank" rel="noreferrer">官方/店鋪頁</a><a class="btn" href="https://tabelog.com/hokkaido/A0104/A010401/1000269/" target="_blank" rel="noreferrer">Tabelog</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E8%9C%82%E5%B1%8B+%E4%BA%94%E6%9D%A1%E5%89%B5%E6%A5%AD%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a></div>
         </article>
